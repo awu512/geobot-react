@@ -14,11 +14,11 @@ def main(cfg: DictConfig):
     assert "geoguessr50k" in cfg.dataset
     dataset = DatasetGeoguessr50k(cfg.dataset.geoguessr50k)
 
-    train_loader = utils.data.DataLoader(dataset, num_workers=0)
+    train_loader = utils.data.DataLoader(dataset, num_workers=cfg.num_workers)
 
-    autoencoder = MainLightningModule(cfg)
+    model = MainLightningModule(cfg)
     trainer = pl.Trainer(max_epochs=100, accelerator="gpu")
-    trainer.fit(model=autoencoder, train_dataloaders=train_loader)
+    trainer.fit(model=model, train_dataloaders=train_loader)
 
 
 if __name__ == "__main__":

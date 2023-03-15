@@ -1,4 +1,6 @@
 defaults:
   - dataset: geoguessr50k
+  - _self_
 
 learning_rate: 3e-4
+num_workers: 8
