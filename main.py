@@ -14,7 +14,11 @@ def main(cfg: DictConfig):
     assert "geoguessr50k" in cfg.dataset
     dataset = DatasetGeoguessr50k(cfg.dataset.geoguessr50k)
 
-    train_loader = utils.data.DataLoader(dataset, num_workers=cfg.num_workers)
+    train_loader = utils.data.DataLoader(
+        dataset,
+        num_workers=cfg.num_workers,
+        batch_size=cfg.batch_size,
+    )
 
     model = MainLightningModule(cfg)
     trainer = pl.Trainer(max_epochs=100, accelerator="gpu")
