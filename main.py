@@ -4,10 +4,9 @@ import hydra
 import pytorch_lightning as pl
 from jaxtyping import install_import_hook
 from omegaconf import DictConfig
-from torch import nn, optim, utils
+from torch import utils
 from torchvision.datasets import MNIST
 from torchvision.transforms import ToTensor
-
 
 with install_import_hook("foo", "beartype.beartype"):
     from src.MainLightningModule import MainLightningModule
