@@ -2,6 +2,7 @@ import hydra
 import pytorch_lightning as pl
 from jaxtyping import install_import_hook
 from omegaconf import DictConfig
+from pytorch_lightning.loggers import WandbLogger
 from torch import utils
 
 with install_import_hook("foo", "beartype.beartype"):
@@ -18,10 +19,16 @@ def main(cfg: DictConfig):
         dataset,
         num_workers=cfg.num_workers,
         batch_size=cfg.batch_size,
+        shuffle=True,
     )
 
     model = MainLightningModule(cfg)
-    trainer = pl.Trainer(max_epochs=100, accelerator="gpu")
+    trainer = pl.Trainer(
+        max_epochs=100,
+        accelerator="gpu",
+        logger=WandbLogger(**cfg.wandb, config=cfg),
+        log_every_n_steps=cfg.log_every_n_steps,
+    )
     trainer.fit(model=model, train_dataloaders=train_loader)
 
 

@@ -19,6 +19,7 @@ class MainLightningModule(pl.LightningModule):
         image = batch["image"]
         prediction = self.model(image)
         loss = F.cross_entropy(prediction, ground_truth)
+        self.log("loss", loss)
         return loss
 
     def configure_optimizers(self):

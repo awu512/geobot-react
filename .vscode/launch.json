@@ -10,6 +10,9 @@
             "request": "launch",
             "module": "main",
             "justMyCode": true,
+            "args": [
+                "wandb.mode=disabled",
+            ],
             "env": {
                 "CUDA_VISIBLE_DEVICES": "0",
             }

@@ -5,3 +5,8 @@ defaults:
 learning_rate: 3e-4
 num_workers: 8
 batch_size: 8
+log_every_n_steps: 1
+
+wandb:
+  project: geoguessr-bot
+  mode: online # set to "disabled" to disable wandb logging

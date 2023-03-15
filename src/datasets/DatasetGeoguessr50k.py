@@ -40,6 +40,7 @@ class DatasetGeoguessr50k(Dataset):
         # Define image loader transformations.
         transforms = [
             tf.ToTensor(),
+            tf.Resize((256, 256)),
         ]
         self.transforms = tf.Compose(transforms)
 
