@@ -19,7 +19,11 @@ class MainLightningModule(pl.LightningModule):
         image = batch["image"]
         prediction = self.model(image)
         loss = F.cross_entropy(prediction, ground_truth)
-        self.log("training_loss", loss)
+        self.log(
+            "training_loss",
+            loss,
+            sync_dist=True,
+        )
         return loss
 
     def validation_step(self, batch, batch_idx):
@@ -27,20 +31,26 @@ class MainLightningModule(pl.LightningModule):
         image = batch["image"]
         prediction = self.model(image)
         loss = F.cross_entropy(prediction, ground_truth)
-        self.log("validation_loss", loss)
+        self.log(
+            "validation_loss",
+            loss,
+            sync_dist=True,
+        )
         self.log(
             "validation_accuracy_top_1",
             (prediction.argmax(-1) == ground_truth).float().mean(),
+            sync_dist=True,
         )
         self.log(
             "validation_accuracy_top_5",
             (
                 prediction.argsort(dim=-1, descending=True)[:, :5]
-                == ground_truth[:, None]
+                == ground_truth[:, None],
             )
             .any(dim=-1)
             .float()
             .mean(),
+            sync_dist=True,
         )
         return loss
 
