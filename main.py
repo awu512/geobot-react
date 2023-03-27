@@ -2,8 +2,11 @@ import hydra
 import pytorch_lightning as pl
 from jaxtyping import install_import_hook
 from omegaconf import DictConfig
+from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
 from torch import Generator, utils
+from datetime import timedelta
+from pathlib import Path
 
 with install_import_hook("foo", "beartype.beartype"):
     from src.datasets.DatasetGeoguessr50k import DatasetGeoguessr50k
@@ -41,12 +44,25 @@ def main(cfg: DictConfig):
         shuffle=False,
     )
 
+    output_dir = Path(
+        hydra.core.hydra_config.HydraConfig.get()["runtime"]["output_dir"]
+    )
+
+    checkpoint_dir = output_dir / "checkpoints"
+
     model = MainLightningModule(cfg)
     trainer = pl.Trainer(
         max_epochs=100,
         accelerator="gpu",
         logger=WandbLogger(**cfg.wandb, config=cfg),
         log_every_n_steps=cfg.log_every_n_steps,
+        callbacks=[
+            ModelCheckpoint(
+                dirpath=checkpoint_dir,
+                train_time_interval=timedelta(hours=1),
+                save_top_k=-1,
+            )
+        ],
     )
     trainer.fit(model=model, train_dataloaders=train_loader, val_dataloaders=val_loader)
 
