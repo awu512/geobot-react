@@ -1,0 +1,12 @@
+.app { 
+    background: #98C3DC;;
+}
+
+header {
+    padding: 2vw;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+}
