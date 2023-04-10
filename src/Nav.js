@@ -1,3 +1,4 @@
+import Button from './Button';
 import logo from './logo.svg';
 import './Nav.css';
 
@@ -11,16 +12,16 @@ function Nav(props) {
                 <h1 className="wordmark">GeoBot</h1>
             </div>
             <div class="btn-container">
-                <div 
-                className={"btn btn-" + (props.isDemo ? "off" : "on")}
+                <Button 
+                active={!props.isDemo}
                 onClick={() => props.setIsDemo(false)}>
                     ABOUT
-                </div>
-                <div 
-                className={"btn btn-" + (props.isDemo ? "on" : "off")}
+                </Button>
+                <Button 
+                active={props.isDemo}
                 onClick={() => props.setIsDemo(true)}>
                     DEMO
-                </div>
+                </Button>
             </div>
         </div>
     );
