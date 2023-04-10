@@ -1,11 +1,7 @@
 import logo from './logo.svg';
 import './Nav.css';
 
-import { useState } from 'react';
-
-function Nav() {
-    const [isDemo, setIsDemo] = useState(true);
-
+function Nav(props) {
     return (
         <div className='nav'>
             <div className="wordmark-container">
@@ -16,13 +12,13 @@ function Nav() {
             </div>
             <div class="btn-container">
                 <div 
-                className={"btn btn-" + (isDemo ? "off" : "on")}
-                onClick={() => setIsDemo(false)}>
+                className={"btn btn-" + (props.isDemo ? "off" : "on")}
+                onClick={() => props.setIsDemo(false)}>
                     ABOUT
                 </div>
                 <div 
-                className={"btn btn-" + (isDemo ? "on" : "off")}
-                onClick={() => setIsDemo(true)}>
+                className={"btn btn-" + (props.isDemo ? "on" : "off")}
+                onClick={() => props.setIsDemo(true)}>
                     DEMO
                 </div>
             </div>
