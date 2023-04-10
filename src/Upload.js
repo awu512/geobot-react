@@ -1,3 +1,4 @@
+import Button from './Button';
 import './Upload.css';
 
 function Upload() {
@@ -5,11 +6,12 @@ function Upload() {
         <div>
             <div className="upload">
                 <p></p>
-                <div 
-                className={"btn btn-off"}
-                onClick={() => props.setIsDemo(false)}>
+                <Button 
+                    active={false}
+                    pressable={true}
+                >
                     UPLOAD
-                </div>
+                </Button>
             </div>
             <div className="upload">
                 <p></p>

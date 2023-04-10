@@ -2,11 +2,13 @@ import './Button.css';
 
 function Button(props) {
     return (
-        <div 
-        className={"btn btn-" + (props.active ? "on" : "off")}
-        onClick={props.onClick}>
-            {props.children}
-        </div>
+        <button 
+            className={"btn btn-" + (props.active ? "on" : "off") + 
+                        (props.pressable ? "pressable" : "")}
+            onClick={props.onClick}
+        >
+            {props.text}
+        </button>
     );
 }
 
