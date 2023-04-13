@@ -9,4 +9,13 @@ header {
 body {
     min-height: 100vh;
     overflow: hidden;
+    color: white;
+}
+
+.main {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

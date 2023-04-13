@@ -1,21 +1,22 @@
 import Button from './Button';
+import TextInput from './TextInput';
 import './Upload.css';
 
 function Upload() {
     return (
         <div>
             <div className="upload">
-                <p></p>
+                <p>pick an image from somewhere in the world</p>
                 <Button 
+                    className="up-btn"
                     active={false}
                     pressable={true}
-                >
-                    UPLOAD
-                </Button>
+                    text="UPLOAD"
+                />
             </div>
             <div className="upload">
-                <p></p>
-                
+                <p>or paste an image url in the box below</p>
+                <TextInput />
             </div>
         </div>
     );

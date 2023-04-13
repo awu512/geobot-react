@@ -2,6 +2,7 @@ import './App.css';
 import Nav from './Nav.js'
 
 import { useState } from 'react';
+import Upload from './Upload';
 
 function App() {
     const [isDemo, setIsDemo] = useState(true);
@@ -12,7 +13,9 @@ function App() {
                 <Nav isDemo={isDemo} setIsDemo={setIsDemo} />
             </header>
             <body>
-                
+                <div className="main">
+                    <Upload />
+                </div>
             </body>
         </div>
     );
