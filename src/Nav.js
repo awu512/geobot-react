@@ -13,12 +13,14 @@ function Nav(props) {
             </div>
             <div class="btn-container">
                 <Button 
+                    className="nav-btn" 
                     active={!props.isDemo}
                     pressable={false}
                     text="ABOUT"
                     onClick={() => props.setIsDemo(false)}
                 />
                 <Button 
+                    className="nav-btn" 
                     active={props.isDemo}
                     pressable={false}
                     text="DEMO"
