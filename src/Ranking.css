@@ -1,0 +1,85 @@
+.rcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    padding: 0.8%;
+
+    background: #98C3DC;
+    box-shadow: 1px 1px 2px rgba(182, 234, 255, 0.3), -1px -1px 2px rgba(122, 156, 176, 0.5), inset -5px 5px 10px rgba(122, 156, 176, 0.2), inset 5px -5px 10px rgba(122, 156, 176, 0.2), inset -5px -5px 10px rgba(182, 234, 255, 0.9), inset 5px 5px 13px rgba(122, 156, 176, 0.9);
+    border-radius: 50px;
+
+    font-size: 28px;
+    line-height: 50px;
+}
+
+.rhdr {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 3%;
+    border-radius: 40px 40px 0px 0px;
+    background: #1E1D35;
+    box-shadow: -3px 3px 6px rgba(137, 176, 198, 0.2), 3px -3px 6px rgba(137, 176, 198, 0.2), -3px -3px 6px rgba(167, 215, 242, 0.9), 3px 3px 8px rgba(137, 176, 198, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(136, 136, 136, 0.5);
+}
+
+.rline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 3%;
+}
+
+.rnum {
+    width: 15%;
+    height: 100%;
+    margin-right: 3%;
+    text-align: right;
+    padding-right: 3%;
+}
+
+.rcountry {
+    width: 79%;
+    height: 100%;
+    background: #98C3DC;
+    box-shadow: -3px 3px 6px rgba(137, 176, 198, 0.2), 3px -3px 6px rgba(137, 176, 198, 0.2), -3px -3px 6px rgba(167, 215, 242, 0.9), 3px 3px 8px rgba(137, 176, 198, 0.9), inset 1px 1px 2px rgba(167, 215, 242, 0.3), inset -1px -1px 2px rgba(137, 176, 198, 0.5);
+    text-align: left;
+    padding-left: 3%;
+}
+
+.r1 > .rnum {
+    background: #FFD700;
+    box-shadow: -3px 3px 6px rgba(137, 176, 198, 0.2), 3px -3px 6px rgba(137, 176, 198, 0.2), -3px -3px 6px rgba(167, 215, 242, 0.9), 3px 3px 8px rgba(137, 176, 198, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(136, 136, 136, 0.5);
+}
+
+.r2 > .rnum {
+    background: #DCDCDC;
+    box-shadow: -3px 3px 6px rgba(137, 176, 198, 0.2), 3px -3px 6px rgba(137, 176, 198, 0.2), -3px -3px 6px rgba(167, 215, 242, 0.9), 3px 3px 8px rgba(137, 176, 198, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(136, 136, 136, 0.5);
+}
+
+.r3 > .rnum {
+    background: #CD7F32;
+    box-shadow: -3px 3px 6px rgba(137, 176, 198, 0.2), 3px -3px 6px rgba(137, 176, 198, 0.2), -3px -3px 6px rgba(167, 215, 242, 0.9), 3px 3px 8px rgba(137, 176, 198, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(136, 136, 136, 0.5);
+}
+
+.r4 > .rnum {
+    background: #709BB4;
+    box-shadow: -3px 3px 6px rgba(137, 176, 198, 0.2), 3px -3px 6px rgba(137, 176, 198, 0.2), -3px -3px 6px rgba(167, 215, 242, 0.9), 3px 3px 8px rgba(137, 176, 198, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(136, 136, 136, 0.5);
+}
+
+.r5 > .rnum {
+    background: #709BB4;
+    box-shadow: -3px 3px 6px rgba(137, 176, 198, 0.2), 3px -3px 6px rgba(137, 176, 198, 0.2), -3px -3px 6px rgba(167, 215, 242, 0.9), 3px 3px 8px rgba(137, 176, 198, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(136, 136, 136, 0.5);
+    border-radius: 0 0 0 40px;
+}
+
+.r5 > .rcountry {
+    border-radius: 0 0 40px 0;
+}
+
+.r5 {
+    margin-bottom: 0;
+}
