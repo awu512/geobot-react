@@ -1,16 +1,17 @@
 import './Button.css';
 
-function Button(props) {
+function Button({
+    className, 
+    text, 
+    active, 
+    onClick
+}) {
     return (
         <button 
-            className={
-                "btn btn-" + (props.active ? "on" : "off") + " " +
-                (props.pressable ? "pressable" : "") + " " +
-                props.className
-            }
-            onClick={props.onClick}
+            className={`btn btn-${active ? "on" : "off"} ${className}`}
+            onClick={onClick}
         >
-            {props.text}
+            {text}
         </button>
     );
 }
