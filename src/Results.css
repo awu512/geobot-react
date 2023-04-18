@@ -1,0 +1,29 @@
+.results {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 96vw;
+    padding: 2vw;
+}
+
+.img-cont {
+    margin-right: 2vw;
+    padding: 1%;
+
+    background: #98C3DC;
+    box-shadow: 1px 1px 2px rgba(182, 234, 255, 0.3), -1px -1px 2px rgba(122, 156, 176, 0.5), inset -5px 5px 10px rgba(122, 156, 176, 0.2), inset 5px -5px 10px rgba(122, 156, 176, 0.2), inset -5px -5px 10px rgba(182, 234, 255, 0.9), inset 5px 5px 13px rgba(122, 156, 176, 0.9);
+    border-radius: 50px;
+}
+
+.img {
+    border-radius: 45px;
+    max-height: 60vh;
+    max-width: 60vw;
+}
+
+.ranking {
+    width: 100%;
+    min-width: 20vw;
+    max-width: 30vw;
+}
