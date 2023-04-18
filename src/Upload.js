@@ -1,17 +1,17 @@
-import Button from './Button';
+import FileInput from './FileInput';
 import TextInput from './TextInput';
 import './Upload.css';
+import Dropzone from 'react-dropzone';
 
-function Upload() {
+function Upload({setImage}) {
     return (
         <div>
             <div className="upload">
                 <p>pick an image from somewhere in the world</p>
-                <Button 
+                <FileInput 
                     className="up-btn"
-                    active={false}
-                    pressable={true}
                     text="UPLOAD"
+                    onChange={setImage(1)}
                 />
             </div>
             <div className="upload">
