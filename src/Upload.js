@@ -1,19 +1,32 @@
-import FileInput from './FileInput';
 import TextInput from './TextInput';
 import './Upload.css';
 import Dropzone from 'react-dropzone';
 
-function Upload({setImage}) {
+function Upload({onUpload}) {
+    function handleFileDrop(acceptedFiles) {
+        onUpload(acceptedFiles[0]);
+    }
+
     return (
         <div>
-            <div className="upload">
-                <p>pick an image from somewhere in the world</p>
-                <FileInput 
-                    className="up-btn"
-                    text="UPLOAD"
-                    onChange={setImage(1)}
-                />
-            </div>
+            <Dropzone onDrop={handleFileDrop}>
+                {({getRootProps, getInputProps}) => (
+                    <div className="upload" {...getRootProps()}>
+                        <p>pick an image from somewhere in the world</p>
+                        <label 
+                            for='file-upload' 
+                            className='file-in'
+                        >
+                            UPLOAD
+                        </label>
+                        <input 
+                            type='file'
+                            id='file-upload'
+                            {...getInputProps()}
+                        />
+                    </div>
+                )}
+            </Dropzone>
             <div className="upload">
                 <p>or paste an image url in the box below</p>
                 <TextInput />
