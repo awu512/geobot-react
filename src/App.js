@@ -15,10 +15,8 @@ function App() {
     function onUpload(image) {
         setIsLoading(true);
         setImage(image);
-        setTimeout(() => {
-            setIsResults(true);
-            setIsLoading(false);
-        }, 1000);
+        setIsResults(true);
+        setIsLoading(false);
     }
 
     return (
