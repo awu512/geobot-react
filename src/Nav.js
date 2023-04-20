@@ -9,7 +9,7 @@ function Nav(props) {
                 <div className="logo-container">
                     <img src={logo} className="logo" alt="GeoBot logo" />
                 </div>
-                <h1 className="wordmark">GeoBot</h1>
+                <h1 className="wordmark">GEoFFREY</h1>
             </div>
             <div class="btn-container">
                 <Button 
