@@ -1,4 +1,3 @@
-import TextInput from './TextInput';
 import './Upload.css';
 import Dropzone from 'react-dropzone';
 
@@ -27,10 +26,6 @@ function Upload({onUpload}) {
                     </div>
                 )}
             </Dropzone>
-            <div className="upload">
-                <p>or paste an image url in the box below</p>
-                <TextInput />
-            </div>
         </div>
     );
 }
