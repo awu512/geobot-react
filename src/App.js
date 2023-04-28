@@ -2,6 +2,7 @@ import './App.css';
 import Nav from './Nav.js'
 
 import { useState } from 'react';
+import About from './About';
 import Upload from './Upload';
 import Results from './Results';
 import Spinner from './Spinner';
@@ -42,9 +43,11 @@ function App() {
             </div>
             <div className='body'>
                 <div className="main">
-                    {isLoading && <Spinner />}
-                    {!isResults && !isLoading && <Upload onUpload={onUpload} />}
-                    {isResults && <Results image={image} results={results}/>}
+                    {isDemo && isLoading && <Spinner />}
+                    {isDemo && !isResults && !isLoading && <Upload onUpload={onUpload} />}
+                    {isDemo && isResults && <Results image={image} results={results}/>}
+
+                    {!isDemo && <About />}
                 </div>
             </div>
         </div>
