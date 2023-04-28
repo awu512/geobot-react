@@ -11,7 +11,7 @@ function Nav(props) {
                 </div>
                 <h1 className="wordmark">GEoFFREY</h1>
             </div>
-            <div class="btn-container">
+            <div className="btn-container">
                 <Button 
                     className="nav-btn" 
                     active={!props.isDemo}
