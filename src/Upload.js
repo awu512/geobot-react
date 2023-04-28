@@ -8,13 +8,13 @@ function Upload({onUpload}) {
 
     return (
         <div>
-            <Dropzone onDrop={handleFileDrop}>
+            <Dropzone onDrop={handleFileDrop} accept={{'image/jpeg': ['.jpg', '.jpeg']}}>
                 {({getRootProps, getInputProps}) => (
                     <div className="upload" {...getRootProps()}>
                         <p>pick an image from somewhere in the world</p>
                         <label 
-                            for='file-upload' 
-                            className='file-in'
+                            htmlFor='file-upload' 
+                            className='file-in noselect'
                         >
                             UPLOAD
                         </label>
