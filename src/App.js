@@ -11,26 +11,42 @@ function App() {
     const [isLoading, setIsLoading] = useState(false);
     const [isResults, setIsResults] = useState(false);
     const [image, setImage] = useState(null);
+    const [results, setResults] = useState(null);
 
-    function onUpload(image) {
+    async function onUpload(image) {
         setIsLoading(true);
         setImage(image);
+
+        const url = 'http://127.0.0.1:5000/upload'
+
+        const formData = new FormData();
+        formData.append('file', image);
+
+        const opts = {
+            method: 'POST',
+            body: formData
+        }
+
+        let res = await fetch(url, opts);
+        let data = await res.json();
+
+        setResults(data);
         setIsResults(true);
         setIsLoading(false);
     }
 
     return (
         <div className="app">
-            <header>
+            <div className='header'>
                 <Nav isDemo={isDemo} setIsDemo={setIsDemo} />
-            </header>
-            <body>
+            </div>
+            <div className='body'>
                 <div className="main">
                     {isLoading && <Spinner />}
                     {!isResults && !isLoading && <Upload onUpload={onUpload} />}
-                    {isResults && <Results image={image} />}
+                    {isResults && <Results image={image} results={results}/>}
                 </div>
-            </body>
+            </div>
         </div>
     );
 }
