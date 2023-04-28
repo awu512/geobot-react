@@ -8,7 +8,7 @@ function Button({
 }) {
     return (
         <button 
-            className={`btn btn-${active ? "on" : "off"} ${className}`}
+            className={`btn btn-${active ? "on" : "off"} ${className} noselect`}
             onClick={onClick}
         >
             {text}
